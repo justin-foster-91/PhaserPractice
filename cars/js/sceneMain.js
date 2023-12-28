@@ -4,8 +4,9 @@ class SceneMain extends Phaser.Scene {
   }
   preload()
   {
-    //TODO: why does this not need "../images/face.png"
-    // this.load.image("face", "images/face.png");
+    this.load.image("road", "images/road.jpg");
+    this.load.image("line", "images/line.png");
+    this.load.sprite("cars", "images/cars.png", {fameWidth: 60, frameHeight: 126});
   }
   create() {
     this.graphics = this.add.graphics();
