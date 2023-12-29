@@ -5,14 +5,16 @@ class SceneMain extends Phaser.Scene {
   preload()
   {
     this.load.image("road", "images/road.jpg");
+    this.load.image("cars", "images/cars.png", {fameWidth: 60, frameHeight: 126});
     this.load.image("line", "images/line.png");
-    this.load.sprite("cars", "images/cars.png", {fameWidth: 60, frameHeight: 126});
   }
   create() {
-    this.graphics = this.add.graphics();
+    this.road = new Road({scene:this});
+    this.road.x = game.config.width/2; 
+    this.road.makeLines();
   }
   
   update() {
-    
+    this.road.moveLines();
   }
 }
